@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import datetime
+from subprocess import call
 
 file_list = []
 
@@ -10,5 +11,6 @@ for i in range(0, 6):
 
 for __file in file_list:
     print __file
+    call(["hdfs", "dfs", "-stat", __file])
 print file_list
 
